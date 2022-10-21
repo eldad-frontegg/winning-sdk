@@ -1,15 +1,18 @@
-module.exports = function getBabelConfig() {
-  return {
-    presets: [
-      "@babel/preset-typescript",
-      [
-        '@babel/preset-react',
-        {
-          runtime: 'automatic'
-        }
-      ],
-      "@babel/preset-react"
-    ],
+module.exports = function getBabelConfig(api) {
+    api.env(['stable', 'rollup']);
 
-  }
-}
+    const presets = [
+        '@babel/preset-env',
+        [
+            '@babel/preset-react',
+            {
+                runtime: 'automatic',
+            },
+        ],
+        '@babel/preset-typescript',
+    ];
+
+    return {
+        presets,
+    };
+};

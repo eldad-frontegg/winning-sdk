@@ -2,3 +2,4 @@
 /sdk/dist
 /shopping-cart/dist
 .idea/
+/sdk/tsconfig.build.tsbuildinfo
