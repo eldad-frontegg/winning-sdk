@@ -2,6 +2,7 @@ import { styled } from '@mui/material/styles';
 import { Box } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
+import React from 'react';
 
 const Container = styled(Box)({
   height: '15%',
