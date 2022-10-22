@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import { TextInput } from './TextInput';
 import { ChatMessages } from './ChatMessages';
 import { ChatTitle } from './ChatTitle.';
-import { ThemeOptions } from '../Themes';
+import { ThemeOptions } from '../../themes';
 import { useTheme } from '@mui/styles';
 
 
@@ -28,7 +28,7 @@ export const Chat = () => {
     , [theme]);
 
   return <ChatContainer $backgroundColor={backgroundColor}>
-    <ChatTitle title={'Support'} subTitle={'How can we assist?'}/>
+    <ChatTitle/>
     <ChatMessages/>
     <TextInput/>
   </ChatContainer>;

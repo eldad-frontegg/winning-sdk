@@ -2,6 +2,7 @@ import React from 'react'
 import TextField from '@mui/material/TextField';
 import {styled}  from "@mui/material/styles";
 import Box from '@mui/material/Box';
+import { useTranslation } from 'react-i18next';
 
 
 const Input = styled(TextField)({
@@ -16,11 +17,12 @@ const Container = styled(Box)({
 })
 
 export const TextInput = () => {
+  const { t } = useTranslation()
   return (
     <>
       <Container>
         <Input inputProps={{ height: '50%'}}
-          placeholder="Type a message"
+          placeholder={t('chat.textInput.placeHolder')}
         />
       </Container>
     </>

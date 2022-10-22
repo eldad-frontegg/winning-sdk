@@ -2,7 +2,7 @@ import { ChatBubble } from '@mui/icons-material';
 import React from 'react';
 import { Box, styled } from '@mui/material';
 import { useTheme } from '@mui/styles';
-import { ThemeOptions } from '../Themes';
+import { ThemeOptions } from '../../themes';
 
 interface SupportButtonProps {
   onClick: () => void

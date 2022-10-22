@@ -2,9 +2,10 @@ import { styled } from '@mui/material/styles';
 import { Box } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import Avatar from '@mui/material/Avatar';
-import { ThemeOptions } from '../Themes';
+import { ThemeOptions } from '../../themes';
 import { useTheme } from '@mui/styles';
 import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Container = styled(Box)(({$backgroundColor} : {$backgroundColor?: string}) => ({
   height: '15%',
@@ -26,15 +27,11 @@ const TitleIcon = styled(Avatar) ({
   margin: '2%'
 })
 
-interface ChatTitleProps {
-  title: string;
-  subTitle?: string;
-  titleIcon?: string;
-}
 
-export const ChatTitle = ({ title, subTitle }: ChatTitleProps) => {
+export const ChatTitle = () => {
   const theme = useTheme<ThemeOptions>()
-
+  const { t } = useTranslation()
+  console.log({ t });
   const backgroundColor = useMemo(() =>
     theme.components?.chat?.header?.colors?.backgroundColor || theme.palette?.primary?.main
   , [theme])
@@ -46,8 +43,8 @@ export const ChatTitle = ({ title, subTitle }: ChatTitleProps) => {
   return <Container $backgroundColor={backgroundColor}>
     <TitleIcon src={'https://cdn1.iconfinder.com/data/icons/ios-11-glyphs/30/online_support-512.png'}/>
     <TextContainer $textColor={textColor}>
-      <Typography variant={'h6'}>{title}</Typography>
-      <Typography variant={'subtitle2'}>{subTitle}</Typography>
+      <Typography variant={'h6'}>{t('chat.header.title')}</Typography>
+      <Typography variant={'subtitle2'}>{t('chat.header.subTitle')}</Typography>
     </TextContainer>
   </Container>;
 };

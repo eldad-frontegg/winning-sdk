@@ -2,7 +2,7 @@ import { styled } from '@mui/material/styles';
 import { Box } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
-import { BOT_IMAGE_URL } from '../../utils/bot.utils';
+import { BOT_IMAGE_URL } from '../../../utils/bot.utils';
 
 const MessageContainer = styled(Box)<{ $rtl?: boolean }>(({ $rtl }) => {
   return {

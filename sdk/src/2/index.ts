@@ -1,2 +1,3 @@
 export * from './SupportBot'
-export * from './Themes'
+export * from './themes'
+export * from './localization'
