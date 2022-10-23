@@ -1,5 +1,11 @@
+/react-app/dist
+/react-app/node_modules
+/web-component-sdk/dist
+/web-component-sdk/node_modules
 /sdk/node_modules
 /sdk/dist
-/shopping-cart/dist
-.idea/
 /sdk/tsconfig.build.tsbuildinfo
+/angular-app/dist
+/angular-app/node_modules
+/angular-app/.angular
+.idea/

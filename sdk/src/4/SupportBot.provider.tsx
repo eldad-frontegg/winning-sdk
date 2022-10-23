@@ -13,12 +13,13 @@ import { CacheProvider } from '@emotion/react';
 interface SupportBotProps {
   themeOptions?: ThemeOptions;
   localizationOptions?: LocalizationOptions;
+  container?: HTMLElement;
   children: JSX.Element;
 }
 
-export const SupportBotProvider = ({ themeOptions, localizationOptions, children }: SupportBotProps) => {
+export const SupportBotProvider = ({ themeOptions, localizationOptions, children, container }: SupportBotProps) => {
   const theme = useFinalTheme(themeOptions);
-  const { shadowRootElem, emotionRootElem } = useShadowDom();
+  const { shadowRootElem, emotionRootElem } = useShadowDom(container);
 
   const cache = createCache({
     key: 'css',

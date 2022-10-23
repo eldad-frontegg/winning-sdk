@@ -6,10 +6,10 @@
   "scripts": {
     "build": "npm run build:stable & npm run build:types",
     "build:watch": "npm run build:stable:watch & npm run build:types:watch",
-    "build:types:watch": "npm run build:types --watch --preserveWatchOutput",
+    "build:types:watch": "tsc -b tsconfig.build.json --watch --preserveWatchOutput",
     "build:types": "tsc -b tsconfig.build.json",
     "build:stable": "node node_modules/.bin/babel --extensions .js,.ts,.tsx ./src --out-dir ./dist",
-    "build:stable:watch": "npm run build:stable --source-maps --watch --skip-initial-build"
+    "build:stable:watch": "node node_modules/.bin/babel --extensions .js,.ts,.tsx ./src --out-dir ./dist --source-maps --watch --skip-initial-build"
   },
   "keywords": [],
   "author": "",
